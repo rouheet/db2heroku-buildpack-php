@@ -75,20 +75,7 @@ function download_and_install_ibm_db() {
   echo "Installing ibm_db2 ..."
   pecl channel-update pecl.php.net
   #pecl install ibm_db2
-  # Copy in MySQL client library.
-mkdir -p /app/php/lib/php
-#cp /usr/lib/libmysqlclient.so.16 /app/php/lib/php
-
-# 'apc' installation
-#
-# $PATH manipulation Necessary for 'pecl install', which relies on
-# PHP binaries relative to $PATH.
-
-export PATH=/app/php/bin:$PATH
-/app/php/bin/pecl channel-update pecl.php.net
-
-# Use defaults for apc build prompts.
-yes '' | /app/php/bin/pecl install apc
+ 
 }
   
 # include .files when moving things around
